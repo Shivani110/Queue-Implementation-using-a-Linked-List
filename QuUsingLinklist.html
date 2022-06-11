@@ -1,0 +1,102 @@
+<html>
+<body>
+<script>
+class QueueLink
+{
+	constructor(x)
+	{
+		this.n = x;
+		this.nxt = null;
+	}
+}
+var a = null, z = null;
+
+function enq(x)
+{
+		var t = new QueueLink(x);
+		document.write("Elements inserted in a Queue: ");
+		if (z == null) 
+		{
+			a = z = t;
+		 var t1 = a;
+		 while(t1!=null)
+		 {
+		   document.write(t1.n+"<--");
+		   t1 = t1.nxt;
+		}
+		document.write("<br/>");
+		}
+		else
+		{
+		 z.nxt = t;
+		 z = t;
+		var t1 = a;
+        while(t1!=null)	
+        {
+		  document.write(t1.n+"<--");
+		  t1 = t1.nxt;
+		}
+      document.write("<br/>");
+   }	  
+}
+function deq()
+{
+		if (a == null)
+	   {
+	     document.write("Empty Queue!!");
+	   }
+	   else
+	   {
+	     a = a.nxt;
+		  if(a==null)
+		 {
+		   z = null;
+		   document.write("Empty Queue!!");
+		 }
+		 else
+		 {
+		   document.write("Elements deleted from Queue: ");
+		   var t1 = a;
+		   while(t1!=null)
+		   {
+		     document.write(t1.n+"->");
+			 t1 = t1.nxt;
+		   }
+		   document.write("<br/>");
+		 }
+	  }
+}
+function printqu()
+{
+   if(a==null || z==null)
+   {
+     document.write("Empty queue!!");
+   }
+   else
+   {
+      document.write("the elements present in a queue: ");
+	  var t1 = a;
+	  while(t1!=null)
+	  {
+	    document.write(t1.n+" ");
+		t1 = t1.nxt;
+	  }
+   }
+}
+
+enq(11);
+enq(13);
+enq(21);
+enq(26);
+enq(35);
+deq();
+enq(45);
+enq(54);
+enq(60);
+enq(66);
+deq();
+deq();
+deq();
+</script>
+</body>
+</html>
